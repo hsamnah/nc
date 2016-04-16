@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2016 (x64) (http://www.altova.com) by Sam Samnah (iWave Interactive Media) -->
+<venues>
+	<venue id="1">
+    <name>iWave Interactive</name>
+		<details>
+			<description>This is sample data</description>
+			<location>
+				<streetAddressOne>406-2400 Bathurst St.</streetAddressOne>
+				<streetAddressTwo />
+				<city>Toronto</city>
+				<region>Ontario</region>
+				<country>Canada</country>
+				<postal>M6B 2Y7</postal>
+			</location>
+			<contact>
+				<department>
+					<DepName>IT and Communications</DepName>
+					<phone>
+						<primary>46-785-4334</primary>
+						<secondary />
+						<mobile>647-702-6991</mobile>
+					</phone>
+					<email>
+						<address>hsamnah@gmail.com</address>
+					</email>
+				</department>
+			</contact>
+			<url>http://wwww.iwaveinteractive.net</url>
+		</details>
+		<events>
+			<event id="1">
+				<title>Application Deployment</title>
+				<date>October 14, 2015</date>
+				<eventimg id="1">/imgs/NightCrawlerR2C2.jpg</eventimg>
+				<imgCollection>
+					<img id="1">
+						<name>sample</name>
+						<src>/imgs/NightCrawlerR2C2.jpg</src>
+					</img>
+					<img id="2">
+						<name>sample</name>
+						<src>/imgs/NightCrawlerR2C2.jpg</src>
+					</img>
+				</imgCollection>
+			</event>
+			<event id="2">
+				<title>Application Deployment</title>
+				<date>October 14, 2015</date>
+				<eventimg id="1">/imgs/settingsIcon.jpg</eventimg>
+				<imgCollection>
+					<img id="1">
+						<name>sample</name>
+						<src>/imgs/NightCrawlerR2C2.jpg</src>
+					</img>
+					<img id="2">
+						<name>sample</name>
+						<src>/imgs/NightCrawlerR2C2.jpg</src>
+					</img>
+				</imgCollection>
+			</event>
+		</events>
+	</venue>
+  <venue id="2">
+    <name>iWave Interactive 2</name>
+    <details>
+      <description>This is sample data</description>
+      <location>
+        <streetAddressOne>406-2400 Bathurst St.</streetAddressOne>
+        <streetAddressTwo />
+        <city>Toronto</city>
+        <region>Ontario</region>
+        <country>Canada</country>
+        <postal>M6B 2Y7</postal>
+      </location>
+      <contact>
+        <department>
+          <DepName>IT and Communications</DepName>
+          <phone>
+            <primary>46-785-4334</primary>
+            <secondary />
+            <mobile>647-702-6991</mobile>
+          </phone>
+          <email>
+            <address>hsamnah@gmail.com</address>
+          </email>
+        </department>
+      </contact>
+      <url>http://wwww.iwaveinteractive.net</url>
+    </details>
+    <events>
+      <event id="1">
+        <title>Application Deployment</title>
+        <date>October 14, 2015</date>
+        <eventimg id="1">/imgs/NightCrawlerR2C2.jpg</eventimg>
+        <imgCollection>
+          <img id="1">
+            <name>sample</name>
+            <src>/imgs/NightCrawlerR2C2.jpg</src>
+          </img>
+          <img id="2">
+            <name>sample</name>
+            <src>/imgs/NightCrawlerR2C2.jpg</src>
+          </img>
+        </imgCollection>
+      </event>
+      <event id="2">
+        <title>Application Deployment</title>
+        <date>October 14, 2015</date>
+        <eventimg id="1">/imgs/settingsIcon.jpg</eventimg>
+        <imgCollection>
+          <img id="1">
+            <name>sample</name>
+            <src>/imgs/NightCrawlerR2C2.jpg</src>
+          </img>
+          <img id="2">
+            <name>sample</name>
+            <src>/imgs/NightCrawlerR2C2.jpg</src>
+          </img>
+        </imgCollection>
+      </event>
+    </events>
+  </venue>
+</venues>

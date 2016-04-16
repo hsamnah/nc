@@ -1,0 +1,89 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="seperateRoot.Master.cs" Inherits="nc.root.seperateRoot" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Night Crawler</title>
+    <link href="style/ncStyle.css" type="text/css" rel="stylesheet" />
+    <script src="scripts/siteScript.js" type="text/javascript"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+
+            <div id="logwindow" class="cl_lbtn_settings" style="width: 150px;">
+                Username:<br />
+                <asp:TextBox ID="uname" runat="server" Width="145px" Font-Names="'segoe ui', tahoma, geneva, verdana, sans-serif" Font-Size="10pt"></asp:TextBox>
+                <br />
+                Password:
+                <br />
+                <asp:TextBox ID="pwd" runat="server" TextMode="Password" Width="145px" Font-Names="'segoe ui', tahoma, geneva, verdana, sans-serif" Font-Size="10pt"></asp:TextBox><br />
+                <asp:LinkButton ID="login" runat="server" Font-Names="'segoe ui', tahoma, geneva, verdana, sans-serif" Font-Size="10pt" ForeColor="White" OnClick="login_Click">Login</asp:LinkButton><br />
+                <a id="register" class="register_cls" href="register.aspx">Register new user</a>
+            </div>
+
+            <div id="vlogwindow" class="cl_lbtn_settings" style="width: 150px;">
+                Venue Name:<br />
+                <asp:TextBox ID="vname" runat="server" Width="145px" Font-Names="'segoe ui', tahoma, geneva, verdana, sans-serif" Font-Size="10pt"></asp:TextBox>
+                <br />
+                Password:
+                <br />
+                <asp:TextBox ID="vpwd" runat="server" TextMode="Password" Width="145px" Font-Names="'segoe ui', tahoma, geneva, verdana, sans-serif" Font-Size="10pt"></asp:TextBox><br />
+                <asp:LinkButton ID="vlogin" runat="server" Font-Names="'segoe ui', tahoma, geneva, verdana, sans-serif" Font-Size="10pt" ForeColor="White" OnClick="vlogin_Click">Login</asp:LinkButton><br />
+                <a id="vregister" class="register_cls" href="vRegistry.aspx">Register new Venue</a>
+            </div>
+
+            <div id="mwindow" class="cl_lbtn_settings" style="width: 150px;">
+                Inbox
+                <br />
+                Outbox<br />
+                Sent Items<br />
+                Drafts<br />
+            </div>
+
+            <table class="Primary_tbl">
+                <tr>
+                    <td>&nbsp;</td>
+                    <td class="menu_Cell">
+                        <table class="menu_tbl_cls">
+                            <tr>
+                                <td class="menu_cell_cls">
+                                    <asp:SiteMapDataSource ID="nc_menuds" runat="server" ShowStartingNode="false" SiteMapProvider="public" />
+                                </td>
+                                <td class="set_cell"></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="pri_center_cell">&nbsp;</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="contentCellroot" id="contentContainer">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td class="pBoundry_cls">
+                        <div>
+                            <span class="Close_cls" id="CloseWin" itemid="closeWindow">Close Window</span>
+                        </div>
+                        <p>© The Underground 2015</p>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

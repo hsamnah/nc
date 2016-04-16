@@ -1,0 +1,18 @@
+﻿input.venueName_cls{
+    border:none;
+    width:253px;
+}
+input.venueStreet_cls{
+    border:none;
+    width:253px;
+}
+input.venueAddress_cls{
+    border:none;
+    width:80px;
+}
+div.mapSelection_cls{
+    background-color:rgba(36, 50, 62, 0.75);padding:2px 2px 2px 2px;display:none;position:absolute;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size:10pt;color:white;
+}
+#mapBtn{cursor:pointer;}
+span.pBtn_cls{cursor:pointer;}
+#pMap{cursor:pointer}

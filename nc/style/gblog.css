@@ -1,0 +1,12 @@
+﻿div.container_items_cls { overflow-x: hidden; width: 988px; text-wrap: none; white-space: nowrap; }
+div.primaryContainer_cls { overflow-y: hidden; overflow-x: hidden; width: 1000px; height: 600px; }
+img.bgImg_cls { width: 520px; height: 295px; }
+div.bcontainer_cls {
+    background: -webkit-gradient(left,rgba(37, 67, 72, 0.50),rgba(170, 102, 50, 0.50)); background: -o-linear-gradient(right,rgba(37, 67, 72, 0.50),rgba(170, 102, 50, 0.50)); background: -moz-linear-gradient(right,rgba(37, 67, 72, 0.50),rgba(170, 102, 50, 0.50)); background: linear-gradient(to right,rgba(37, 67, 72, 0.50),rgba(170, 102, 50, 0.50));position: absolute; display:inline-block;width:350px;height:295px;
+}
+span.bTitle_cls{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:16pt; color:rgba(255, 255, 255,.75);
+}
+div.bg_blog_cls { position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: 10000; visibility: hidden; background-color: rgba(20, 20, 20,0.9); }
+/*Marquee options: overflow-style, marquee-style, marquee-play-count, marquee-direction, and marquee-speed.*/
+div.marque_cls { background: -webkit-gradient(left,rgba(37, 67, 72, 0.01),rgba(170, 102, 50, .75)); background: -o-linear-gradient(right,rgba(37, 67, 72, 0.01),rgba(170, 102, 50, .75)); background: -moz-linear-gradient(right,rgba(37, 67, 72, 0.01),rgba(170, 102, 50, .75)); background: linear-gradient(to right,rgba(37, 67, 72, 0.01),rgba(170, 102, 50, .75)); position: absolute; width: 1000px; height: 38px; margin-bottom: 5px; visibility: visible; }

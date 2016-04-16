@@ -1,0 +1,12 @@
+﻿table{
+    width:100%;
+}
+span{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:10pt;color:#B4C6D3;cursor:pointer;
+}
+td.block_cls{
+    padding:5px 5px 5px 5px;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:10pt;color:#384652;background-color:#B4C6D3;
+}
+th{
+    padding:5px 5px 5px 5px;text-align:left;background-color:#384652;color:#B4C6D3;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:10pt;
+}

@@ -1,0 +1,22 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="root2.master.cs" Inherits="nc.root2" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="style/rootStyle.css" type="text/css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="newStyle_cls">
+    <form id="form1" runat="server">
+        <div class="rootDiv_cls">
+            <div class="contentRoot_cls">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+            </div>
+            <div class="baseCredits_cls">&emsp;© 2015 The Underground</div>
+        </div>
+    </form>
+</body>
+</html>

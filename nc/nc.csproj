@@ -1,0 +1,1131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A4CAC28B-F66C-42C7-B64A-EB0AED374127}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>nc</RootNamespace>
+    <AssemblyName>nc</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FormControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\FormControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Client, Version=2.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Client.2.1.2\lib\net45\Microsoft.AspNet.SignalR.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.0\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Owin.1.2.2\lib\net45\Microsoft.AspNet.SignalR.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.0\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.WebSockets.Protocol, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebSockets.Protocol.1.0.0-beta8\lib\net45\Microsoft.AspNet.WebSockets.Protocol.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Cors, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Cors.3.0.1\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="anima\a_0.gif" />
+    <Content Include="anima\a_1.gif" />
+    <Content Include="anima\a_10.gif" />
+    <Content Include="anima\a_11.gif" />
+    <Content Include="anima\a_12.gif" />
+    <Content Include="anima\a_13.gif" />
+    <Content Include="anima\a_14.gif" />
+    <Content Include="anima\a_15.gif" />
+    <Content Include="anima\a_16.gif" />
+    <Content Include="anima\a_17.gif" />
+    <Content Include="anima\a_18.gif" />
+    <Content Include="anima\a_19.gif" />
+    <Content Include="anima\a_2.gif" />
+    <Content Include="anima\a_20.gif" />
+    <Content Include="anima\a_21.gif" />
+    <Content Include="anima\a_22.gif" />
+    <Content Include="anima\a_23.gif" />
+    <Content Include="anima\a_3.gif" />
+    <Content Include="anima\a_4.gif" />
+    <Content Include="anima\a_5.gif" />
+    <Content Include="anima\a_6.gif" />
+    <Content Include="anima\a_7.gif" />
+    <Content Include="anima\a_7.jpg" />
+    <Content Include="anima\a_8.gif" />
+    <Content Include="anima\a_9.gif" />
+    <Content Include="anima\s_1.jpg" />
+    <Content Include="anima\s_10.jpg" />
+    <Content Include="anima\s_11.jpg" />
+    <Content Include="anima\s_12.jpg" />
+    <Content Include="anima\s_13.jpg" />
+    <Content Include="anima\s_14.jpg" />
+    <Content Include="anima\s_15.jpg" />
+    <Content Include="anima\s_16.jpg" />
+    <Content Include="anima\s_17.jpg" />
+    <Content Include="anima\s_18.jpg" />
+    <Content Include="anima\s_2.jpg" />
+    <Content Include="anima\s_20.jpg" />
+    <Content Include="anima\s_21.jpg" />
+    <Content Include="anima\s_22.jpg" />
+    <Content Include="anima\s_23.jpg" />
+    <Content Include="anima\s_24.jpg" />
+    <Content Include="anima\s_25.jpg" />
+    <Content Include="anima\s_26.jpg" />
+    <Content Include="anima\s_27.jpg" />
+    <Content Include="anima\s_28.jpg" />
+    <Content Include="anima\s_29.jpg" />
+    <Content Include="anima\s_3.jpg" />
+    <Content Include="anima\s_30.jpg" />
+    <Content Include="anima\s_31.jpg" />
+    <Content Include="anima\s_32.jpg" />
+    <Content Include="anima\s_33.jpg" />
+    <Content Include="anima\s_19.jpg" />
+    <Content Include="anima\s_4.jpg" />
+    <Content Include="anima\s_5.jpg" />
+    <Content Include="anima\s_6.jpg" />
+    <Content Include="anima\s_7.jpg" />
+    <Content Include="anima\s_8.jpg" />
+    <Content Include="anima\s_9.jpg" />
+    <Content Include="bin\FormControl.dll" />
+    <Content Include="bin\FormControl.pdb" />
+    <Content Include="bin\Microsoft.AspNet.SignalR.Client.dll" />
+    <Content Include="bin\Microsoft.AspNet.SignalR.Core.dll" />
+    <Content Include="bin\Microsoft.AspNet.SignalR.Owin.dll" />
+    <Content Include="bin\Microsoft.AspNet.SignalR.SystemWeb.dll" />
+    <Content Include="bin\Microsoft.AspNet.WebSockets.Protocol.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.Owin.Cors.dll" />
+    <Content Include="bin\Microsoft.Owin.dll" />
+    <Content Include="bin\Microsoft.Owin.Host.SystemWeb.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.dll" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\nc.dll.CodeAnalysisLog.xml" />
+    <Content Include="bin\nc.pdb" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Owin.dll" />
+    <Content Include="bin\phGallery.dll" />
+    <Content Include="bin\roslyn\csc.exe" />
+    <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
+    <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
+    <Content Include="bin\roslyn\vbc.exe" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="bin\System.Web.Cors.dll" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="Controls\avatarUpload.ascx" />
+    <Content Include="Controls\Blog.ascx" />
+    <Content Include="Controls\chatHistory.ascx" />
+    <Content Include="Controls\Connect.ascx" />
+    <Content Include="Controls\datePicker.ascx" />
+    <Content Include="Controls\eventGallery.ascx" />
+    <Content Include="Controls\frontBlog.ascx" />
+    <Content Include="Controls\imgMenu.ascx" />
+    <Content Include="Controls\mDirections.ascx" />
+    <Content Include="Controls\memberSearch.ascx" />
+    <Content Include="Controls\posterCtrl.ascx" />
+    <Content Include="Controls\timeControl.ascx" />
+    <Content Include="Controls\userEvent.ascx" />
+    <Content Include="Controls\userPosts.ascx" />
+    <Content Include="Controls\VenueListing.ascx" />
+    <Content Include="emailTemplates\userMembershipInvite.html" />
+    <Content Include="emailTemplates\emailInvitation.html" />
+    <Content Include="emailTemplates\imgs\s_48.jpg" />
+    <Content Include="imgs\2007_08_21clubland.png" />
+    <Content Include="imgs\354_2.jpg" />
+    <Content Include="imgs\abstract.gif" />
+    <Content Include="imgs\abstract.png" />
+    <Content Include="imgs\add.png" />
+    <Content Include="imgs\add_folder.png" />
+    <Content Include="imgs\backdrop.png" />
+    <Content Include="imgs\backdroplarge.png" />
+    <Content Include="imgs\bg-nightlife.png" />
+    <Content Include="imgs\bk.png" />
+    <Content Include="imgs\Bold.png" />
+    <Content Include="imgs\Calendar.png" />
+    <Content Include="imgs\centerAlign.png" />
+    <Content Include="imgs\checked.png" />
+    <Content Include="imgs\CityNight.gif" />
+    <Content Include="imgs\CityNight.png" />
+    <Content Include="imgs\close.gif" />
+    <Content Include="imgs\close.png" />
+    <Content Include="imgs\closeInvert.gif" />
+    <Content Include="imgs\clrbtn.png" />
+    <Content Include="imgs\colorSwatch.png" />
+    <Content Include="imgs\comm-icon.png" />
+    <Content Include="imgs\connectUsers.png" />
+    <Content Include="imgs\dropMenuIcon.png" />
+    <Content Include="imgs\emoticons\a1.png" />
+    <Content Include="imgs\emoticons\a10.png" />
+    <Content Include="imgs\emoticons\a11.png" />
+    <Content Include="imgs\emoticons\a12.png" />
+    <Content Include="imgs\emoticons\a13.png" />
+    <Content Include="imgs\emoticons\a14.png" />
+    <Content Include="imgs\emoticons\a16.png" />
+    <Content Include="imgs\emoticons\a17.png" />
+    <Content Include="imgs\emoticons\a18.png" />
+    <Content Include="imgs\emoticons\a19.png" />
+    <Content Include="imgs\emoticons\a2.png" />
+    <Content Include="imgs\emoticons\a20.png" />
+    <Content Include="imgs\emoticons\a21.png" />
+    <Content Include="imgs\emoticons\a22.png" />
+    <Content Include="imgs\emoticons\a23.png" />
+    <Content Include="imgs\emoticons\a24.png" />
+    <Content Include="imgs\emoticons\a25.png" />
+    <Content Include="imgs\emoticons\a26.png" />
+    <Content Include="imgs\emoticons\a27.png" />
+    <Content Include="imgs\emoticons\a28.png" />
+    <Content Include="imgs\emoticons\a29.png" />
+    <Content Include="imgs\emoticons\a3.png" />
+    <Content Include="imgs\emoticons\a30.png" />
+    <Content Include="imgs\emoticons\a31.png" />
+    <Content Include="imgs\emoticons\a32.png" />
+    <Content Include="imgs\emoticons\a33.png" />
+    <Content Include="imgs\emoticons\a34.png" />
+    <Content Include="imgs\emoticons\a35.png" />
+    <Content Include="imgs\emoticons\a36.png" />
+    <Content Include="imgs\emoticons\a37.png" />
+    <Content Include="imgs\emoticons\a38.png" />
+    <Content Include="imgs\emoticons\a39.png" />
+    <Content Include="imgs\emoticons\a4.png" />
+    <Content Include="imgs\emoticons\a40.png" />
+    <Content Include="imgs\emoticons\a41.png" />
+    <Content Include="imgs\emoticons\a42.png" />
+    <Content Include="imgs\emoticons\a43.png" />
+    <Content Include="imgs\emoticons\a44.png" />
+    <Content Include="imgs\emoticons\a45.png" />
+    <Content Include="imgs\emoticons\a46.png" />
+    <Content Include="imgs\emoticons\a47.png" />
+    <Content Include="imgs\emoticons\a48.png" />
+    <Content Include="imgs\emoticons\a49.png" />
+    <Content Include="imgs\emoticons\a5.png" />
+    <Content Include="imgs\emoticons\a50.png" />
+    <Content Include="imgs\emoticons\a51.png" />
+    <Content Include="imgs\emoticons\a52.png" />
+    <Content Include="imgs\emoticons\a53.png" />
+    <Content Include="imgs\emoticons\a54.png" />
+    <Content Include="imgs\emoticons\a55.png" />
+    <Content Include="imgs\emoticons\a56.png" />
+    <Content Include="imgs\emoticons\a57.png" />
+    <Content Include="imgs\emoticons\a58.png" />
+    <Content Include="imgs\emoticons\a59.png" />
+    <Content Include="imgs\emoticons\a60.png" />
+    <Content Include="imgs\emoticons\a61.png" />
+    <Content Include="imgs\emoticons\a7.png" />
+    <Content Include="imgs\emoticons\a8.png" />
+    <Content Include="imgs\emoticons\a9.png" />
+    <Content Include="imgs\emoticons\b1.png" />
+    <Content Include="imgs\emoticons\b10.png" />
+    <Content Include="imgs\emoticons\b13.png" />
+    <Content Include="imgs\emoticons\b14.png" />
+    <Content Include="imgs\emoticons\b15.png" />
+    <Content Include="imgs\emoticons\b2.png" />
+    <Content Include="imgs\emoticons\b3.png" />
+    <Content Include="imgs\emoticons\b4.png" />
+    <Content Include="imgs\emoticons\b5.png" />
+    <Content Include="imgs\emoticons\b6.png" />
+    <Content Include="imgs\emoticons\b7.png" />
+    <Content Include="imgs\emoticons\b8.png" />
+    <Content Include="imgs\emoticons\b9.png" />
+    <Content Include="imgs\emoticons\c1.png" />
+    <Content Include="imgs\emoticons\c2.png" />
+    <Content Include="imgs\emoticons\c3.png" />
+    <Content Include="imgs\emoticons\c4.png" />
+    <Content Include="imgs\emoticons\d1.png" />
+    <Content Include="imgs\emoticons\d10.png" />
+    <Content Include="imgs\emoticons\d11.png" />
+    <Content Include="imgs\emoticons\d12.png" />
+    <Content Include="imgs\emoticons\d13.png" />
+    <Content Include="imgs\emoticons\d14.png" />
+    <Content Include="imgs\emoticons\d15.png" />
+    <Content Include="imgs\emoticons\d16.png" />
+    <Content Include="imgs\emoticons\d17.png" />
+    <Content Include="imgs\emoticons\d18.png" />
+    <Content Include="imgs\emoticons\d19.png" />
+    <Content Include="imgs\emoticons\d2.png" />
+    <Content Include="imgs\emoticons\d20.png" />
+    <Content Include="imgs\emoticons\d21.png" />
+    <Content Include="imgs\emoticons\d22.png" />
+    <Content Include="imgs\emoticons\d23.png" />
+    <Content Include="imgs\emoticons\d24.png" />
+    <Content Include="imgs\emoticons\d25.png" />
+    <Content Include="imgs\emoticons\d26.png" />
+    <Content Include="imgs\emoticons\d27.png" />
+    <Content Include="imgs\emoticons\d28.png" />
+    <Content Include="imgs\emoticons\d29.png" />
+    <Content Include="imgs\emoticons\d3.png" />
+    <Content Include="imgs\emoticons\d30.png" />
+    <Content Include="imgs\emoticons\d31.png" />
+    <Content Include="imgs\emoticons\d32.png" />
+    <Content Include="imgs\emoticons\d33.png" />
+    <Content Include="imgs\emoticons\d34.png" />
+    <Content Include="imgs\emoticons\d35.png" />
+    <Content Include="imgs\emoticons\d36.png" />
+    <Content Include="imgs\emoticons\d37.png" />
+    <Content Include="imgs\emoticons\d4.png" />
+    <Content Include="imgs\emoticons\d5.png" />
+    <Content Include="imgs\emoticons\d6.png" />
+    <Content Include="imgs\emoticons\d7.png" />
+    <Content Include="imgs\emoticons\d8.png" />
+    <Content Include="imgs\emoticons\d9.png" />
+    <Content Include="imgs\emoticons\e1.png" />
+    <Content Include="imgs\emoticons\e2.png" />
+    <Content Include="imgs\emoticons\e3.png" />
+    <Content Include="imgs\emoticons\e4.png" />
+    <Content Include="imgs\emoticons\e5.png" />
+    <Content Include="imgs\emoticons\e6.png" />
+    <Content Include="imgs\emoticons\e7.png" />
+    <Content Include="imgs\emoticons\e8.png" />
+    <Content Include="imgs\emoticons\e9.png" />
+    <Content Include="imgs\emoticons\f1.png" />
+    <Content Include="imgs\emoticons\f10.png" />
+    <Content Include="imgs\emoticons\f11.png" />
+    <Content Include="imgs\emoticons\f12.png" />
+    <Content Include="imgs\emoticons\f13.png" />
+    <Content Include="imgs\emoticons\f14.png" />
+    <Content Include="imgs\emoticons\f2.png" />
+    <Content Include="imgs\emoticons\f3.png" />
+    <Content Include="imgs\emoticons\f4.png" />
+    <Content Include="imgs\emoticons\f5.png" />
+    <Content Include="imgs\emoticons\f6.png" />
+    <Content Include="imgs\emoticons\f7.png" />
+    <Content Include="imgs\emoticons\f8.png" />
+    <Content Include="imgs\emoticons\f9.png" />
+    <Content Include="imgs\EventImgNA.png" />
+    <Content Include="imgs\false.png" />
+    <Content Include="imgs\FullJustify.png" />
+    <Content Include="imgs\FullMenuFormatSide.png" />
+    <Content Include="imgs\gmap.png" />
+    <Content Include="imgs\imgFolder.png" />
+    <Content Include="imgs\imgIcon.png" />
+    <Content Include="imgs\imgSelect.jpg" />
+    <Content Include="imgs\imgSelection.png" />
+    <Content Include="imgs\Italic.png" />
+    <Content Include="imgs\leftAlign.png" />
+    <Content Include="imgs\locationIcon.png" />
+    <Content Include="imgs\md.png" />
+    <Content Include="imgs\mechucocktails_1.png" />
+    <Content Include="imgs\minimize.gif" />
+    <Content Include="imgs\na.png" />
+    <Content Include="imgs\nc.png" />
+    <Content Include="imgs\nl.png" />
+    <Content Include="imgs\openFolder.png" />
+    <Content Include="imgs\paperClip.png" />
+    <Content Include="imgs\PartialMenuFormatSide.png" />
+    <Content Include="imgs\post.png" />
+    <Content Include="imgs\postSend.png" />
+    <Content Include="imgs\Reduce.gif" />
+    <Content Include="imgs\rightAlign.png" />
+    <Content Include="imgs\search-icon-white-hi.png" />
+    <Content Include="imgs\search-icon-white-hi2.png" />
+    <Content Include="imgs\settingsIcon.jpg" />
+    <Content Include="imgs\StandardFormatSide.png" />
+    <Content Include="imgs\StandardFormatSite.png" />
+    <Content Include="imgs\s_48.jpg" />
+    <Content Include="imgs\thumbsdown.jpg" />
+    <Content Include="imgs\thumbsup.jpg" />
+    <Content Include="imgs\true.png" />
+    <Content Include="imgs\txbx.gif" />
+    <Content Include="imgs\uncheck.png" />
+    <Content Include="imgs\Underline.png" />
+    <Content Include="imgs\upDir.png" />
+    <Content Include="imgs\vbna.jpg" />
+    <Content Include="imgs\vbna_full.jpg" />
+    <Content Include="packages.config" />
+    <Content Include="root.Master" />
+    <Content Include="scripts\jsDirections.js" />
+    <Content Include="scripts\chScript.js" />
+    <Content Include="scripts\datepicker.js" />
+    <Content Include="scripts\eventGalleryScript.js" />
+    <Content Include="scripts\javascript-xpath-latest.js" />
+    <Content Include="scripts\jsAV.js" />
+    <Content Include="scripts\jsBlog.js" />
+    <Content Include="scripts\jsCon.js" />
+    <Content Include="scripts\jsIM.js" />
+    <Content Include="scripts\jsMashUp.js" />
+    <Content Include="scripts\jsMS.js" />
+    <Content Include="scripts\jsNV.js" />
+    <Content Include="scripts\jsPC.js" />
+    <Content Include="scripts\jsPost.js" />
+    <Content Include="scripts\jsRegister.js" />
+    <Content Include="scripts\jsResus.js" />
+    <Content Include="scripts\jsUEvent.js" />
+    <Content Include="scripts\jsVL.js" />
+    <Content Include="seperateRoot.Master" />
+    <Content Include="minRoot.Master" />
+    <Content Include="style\autoSugStyle.css" />
+    <Content Include="style\avUpload.css" />
+    <Content Include="style\blog.css" />
+    <Content Include="style\chStyle.css" />
+    <Content Include="style\cStyle.css" />
+    <Content Include="style\dirStyle.css" />
+    <Content Include="style\gblog.css" />
+    <Content Include="style\pcStyle.css" />
+    <Content Include="style\rootStyle.css" />
+    <Content Include="style\test.css" />
+    <Content Include="style\ueStyle.css" />
+    <Content Include="style\veListing.css" />
+    <Content Include="style\venueListing.css" />
+    <Content Include="style\uiStyle.css" />
+    <Content Include="style\venueStyle.css" />
+    <Content Include="style\vGSStyle.css" />
+    <Content Include="testgmap.html" />
+    <Content Include="UserItems\Test.aspx" />
+    <Content Include="UserItems\guestservices.aspx" />
+    <Content Include="UserItems\vGServes.aspx" />
+    <Content Include="UserItems\uiSys.aspx" />
+    <Content Include="venueCntrls\imgGallery.ascx" />
+    <Content Include="venueScript\tuScript.js" />
+    <Content Include="venueScript\vImgGallery.js" />
+    <Content Include="Venues\venueUploads\SamsClub\bgclub.jpg" />
+    <Content Include="Venues\venueUploads\Union\abstract_0033-667876.jpg" />
+    <Content Include="Venues\venueWelcome.aspx" />
+    <Content Include="Venues\venuePhotos.aspx" />
+    <Content Include="default.aspx" />
+    <Content Include="register.aspx" />
+    <Content Include="validation.aspx" />
+    <Content Include="vregCon3.aspx" />
+    <Content Include="vRegistry.aspx" />
+    <Content Include="vRegCon.aspx" />
+    <Content Include="vregCon2.aspx" />
+    <Content Include="rsvpUU.aspx" />
+    <Content Include="logrec.aspx" />
+    <Content Include="reset.aspx" />
+    <Content Include="finalReset.aspx" />
+    <Content Include="xmlData\userlist.xml" />
+    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="bin\nc.dll.config" />
+    <Content Include="bin\nc.dll.lastcodeanalysissucceeded" />
+    <Content Include="Captcha.ashx" />
+    <None Include="Properties\PublishProfiles\ithe_underground.pubxml" />
+    <Content Include="root2.Master" />
+    <Content Include="root3.Master" />
+    <None Include="scripts\jquery-2.1.4.intellisense.js" />
+    <Content Include="scripts\jquery-2.1.4.js" />
+    <Content Include="scripts\jquery-2.1.4.min.js" />
+    <Content Include="scripts\jquery-ui-1.11.4.js" />
+    <Content Include="scripts\jquery-ui-1.11.4.min.js" />
+    <Content Include="scripts\jquery.signalR-2.2.0.js" />
+    <Content Include="scripts\jquery.signalR-2.2.0.min.js" />
+    <Content Include="UserItems\userPhotos.aspx" />
+    <Content Include="UserItems\eDate.aspx" />
+    <Content Include="UserItems\userWelcome.aspx" />
+    <Content Include="Web.sitemap">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="UserItems\UserSettings.aspx" />
+    <Content Include="UserItems\root.Master" />
+    <Content Include="UserItems\Web.sitemap" />
+    <Content Include="News.aspx" />
+    <Content Include="photos.aspx" />
+    <Content Include="blognreview.aspx" />
+    <Content Include="register2.aspx" />
+    <Content Include="vRegistry2.aspx" />
+    <Content Include="login.aspx" />
+    <Content Include="mobility_pg.aspx" />
+    <Content Include="about_pg.aspx" />
+    <Content Include="employment_pg.aspx" />
+    <Content Include="advertisement_pg.aspx" />
+    <Content Include="ticket_pg.aspx" />
+    <Content Include="terms_pg.aspx" />
+    <Content Include="privacy_pg.aspx" />
+    <Content Include="designTest.aspx" />
+    <Content Include="xmlData\images.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="scripts\jquery-2.1.4.min.map" />
+    <Content Include="UserItems\minUser.Master" />
+    <Content Include="Venues\root.Master" />
+    <Content Include="Venues\minVenue.Master" />
+    <Content Include="rootVenue.master" />
+    <Content Include="UserItems\uiroot.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="xmlData\imagesSch.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="xmlData\UserList.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="imgs\NightCrawlerR2C2.jpg" />
+    <Content Include="scripts\siteScript.js" />
+    <Content Include="style\ncStyle.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="default2.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Code\venueListCtrl.cs" />
+    <Compile Include="blogCategories.cs" />
+    <Compile Include="Captcha.ashx.cs">
+      <DependentUpon>Captcha.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\avatarUpload.ascx.cs">
+      <DependentUpon>avatarUpload.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\avatarUpload.ascx.designer.cs">
+      <DependentUpon>avatarUpload.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Blog.ascx.cs">
+      <DependentUpon>Blog.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Blog.ascx.designer.cs">
+      <DependentUpon>Blog.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\chatHistory.ascx.cs">
+      <DependentUpon>chatHistory.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\chatHistory.ascx.designer.cs">
+      <DependentUpon>chatHistory.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Connect.ascx.cs">
+      <DependentUpon>Connect.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Connect.ascx.designer.cs">
+      <DependentUpon>Connect.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\datePicker.ascx.cs">
+      <DependentUpon>datePicker.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\datePicker.ascx.designer.cs">
+      <DependentUpon>datePicker.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\eventGallery.ascx.cs">
+      <DependentUpon>eventGallery.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\eventGallery.ascx.designer.cs">
+      <DependentUpon>eventGallery.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\frontBlog.ascx.cs">
+      <DependentUpon>frontBlog.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\frontBlog.ascx.designer.cs">
+      <DependentUpon>frontBlog.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\imgMenu.ascx.cs">
+      <DependentUpon>imgMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\imgMenu.ascx.designer.cs">
+      <DependentUpon>imgMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\mDirections.ascx.cs">
+      <DependentUpon>mDirections.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\mDirections.ascx.designer.cs">
+      <DependentUpon>mDirections.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\memberSearch.ascx.cs">
+      <DependentUpon>memberSearch.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\memberSearch.ascx.designer.cs">
+      <DependentUpon>memberSearch.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\posterCtrl.ascx.cs">
+      <DependentUpon>posterCtrl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\posterCtrl.ascx.designer.cs">
+      <DependentUpon>posterCtrl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\timeControl.ascx.cs">
+      <DependentUpon>timeControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\timeControl.ascx.designer.cs">
+      <DependentUpon>timeControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\userEvent.ascx.cs">
+      <DependentUpon>userEvent.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\userEvent.ascx.designer.cs">
+      <DependentUpon>userEvent.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\userPosts.ascx.cs">
+      <DependentUpon>userPosts.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\userPosts.ascx.designer.cs">
+      <DependentUpon>userPosts.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\VenueListing.ascx.cs">
+      <DependentUpon>VenueListing.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\VenueListing.ascx.designer.cs">
+      <DependentUpon>VenueListing.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="minRoot.Master.cs">
+      <DependentUpon>minRoot.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="minRoot.Master.designer.cs">
+      <DependentUpon>minRoot.Master</DependentUpon>
+    </Compile>
+    <Compile Include="designTest.aspx.cs">
+      <DependentUpon>designTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="designTest.aspx.designer.cs">
+      <DependentUpon>designTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="root2.Master.cs">
+      <DependentUpon>root2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="root2.Master.designer.cs">
+      <DependentUpon>root2.Master</DependentUpon>
+    </Compile>
+    <Compile Include="root3.Master.cs">
+      <DependentUpon>root3.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="root3.Master.designer.cs">
+      <DependentUpon>root3.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserItems\minUser.Master.cs">
+      <DependentUpon>minUser.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserItems\minUser.Master.designer.cs">
+      <DependentUpon>minUser.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserItems\eDate.aspx.cs">
+      <DependentUpon>eDate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserItems\eDate.aspx.designer.cs">
+      <DependentUpon>eDate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserItems\uiroot.Master.cs">
+      <DependentUpon>uiroot.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserItems\uiroot.Master.designer.cs">
+      <DependentUpon>uiroot.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserItems\Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserItems\Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserItems\guestservices.aspx.cs">
+      <DependentUpon>guestservices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserItems\guestservices.aspx.designer.cs">
+      <DependentUpon>guestservices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserItems\vGServes.aspx.cs">
+      <DependentUpon>vGServes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserItems\vGServes.aspx.designer.cs">
+      <DependentUpon>vGServes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserItems\uiSys.aspx.cs">
+      <DependentUpon>uiSys.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserItems\uiSys.aspx.designer.cs">
+      <DependentUpon>uiSys.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="venueCntrls\imgGallery.ascx.cs">
+      <DependentUpon>imgGallery.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="venueCntrls\imgGallery.ascx.designer.cs">
+      <DependentUpon>imgGallery.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Venues\minVenue.Master.cs">
+      <DependentUpon>minVenue.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Venues\minVenue.Master.designer.cs">
+      <DependentUpon>minVenue.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Venues\root.Master.cs">
+      <DependentUpon>root.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Venues\root.Master.designer.cs">
+      <DependentUpon>root.Master</DependentUpon>
+    </Compile>
+    <Compile Include="rootVenue.master.cs">
+      <DependentUpon>rootVenue.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rootVenue.master.designer.cs">
+      <DependentUpon>rootVenue.master</DependentUpon>
+    </Compile>
+    <Compile Include="Venues\venueWelcome.aspx.cs">
+      <DependentUpon>venueWelcome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Venues\venueWelcome.aspx.designer.cs">
+      <DependentUpon>venueWelcome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Venues\venuePhotos.aspx.cs">
+      <DependentUpon>venuePhotos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Venues\venuePhotos.aspx.designer.cs">
+      <DependentUpon>venuePhotos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="register.aspx.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="register.aspx.designer.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="validation.aspx.cs">
+      <DependentUpon>validation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="validation.aspx.designer.cs">
+      <DependentUpon>validation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vregCon3.aspx.cs">
+      <DependentUpon>vregCon3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vregCon3.aspx.designer.cs">
+      <DependentUpon>vregCon3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vRegistry.aspx.cs">
+      <DependentUpon>vRegistry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vRegistry.aspx.designer.cs">
+      <DependentUpon>vRegistry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vRegCon.aspx.cs">
+      <DependentUpon>vRegCon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vRegCon.aspx.designer.cs">
+      <DependentUpon>vRegCon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vregCon2.aspx.cs">
+      <DependentUpon>vregCon2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vregCon2.aspx.designer.cs">
+      <DependentUpon>vregCon2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rsvpUU.aspx.cs">
+      <DependentUpon>rsvpUU.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rsvpUU.aspx.designer.cs">
+      <DependentUpon>rsvpUU.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="logrec.aspx.cs">
+      <DependentUpon>logrec.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="logrec.aspx.designer.cs">
+      <DependentUpon>logrec.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reset.aspx.cs">
+      <DependentUpon>reset.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reset.aspx.designer.cs">
+      <DependentUpon>reset.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="finalReset.aspx.cs">
+      <DependentUpon>finalReset.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="finalReset.aspx.designer.cs">
+      <DependentUpon>finalReset.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="windowResponseHelper.cs" />
+    <Compile Include="Enumerators.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="seperateRoot.Master.cs">
+      <DependentUpon>seperateRoot.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="seperateRoot.Master.designer.cs">
+      <DependentUpon>seperateRoot.Master</DependentUpon>
+    </Compile>
+    <Compile Include="root.Master.cs">
+      <DependentUpon>root.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="root.Master.designer.cs">
+      <DependentUpon>root.Master</DependentUpon>
+    </Compile>
+    <Compile Include="default2.aspx.cs">
+      <DependentUpon>default2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default2.aspx.designer.cs">
+      <DependentUpon>default2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="style\ncStyle.Setup.cs">
+      <DependentUpon>ncStyle.css</DependentUpon>
+    </Compile>
+    <Compile Include="UserItems\UnderChat.cs" />
+    <Compile Include="UserItems\root.Master.cs">
+      <DependentUpon>root.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserItems\root.Master.designer.cs">
+      <DependentUpon>root.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserItems\UserSettings.aspx.cs">
+      <DependentUpon>UserSettings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserItems\UserSettings.aspx.designer.cs">
+      <DependentUpon>UserSettings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserItems\userPhotos.aspx.cs">
+      <DependentUpon>userPhotos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserItems\userPhotos.aspx.designer.cs">
+      <DependentUpon>userPhotos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserItems\userWelcome.aspx.cs">
+      <DependentUpon>userWelcome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserItems\userWelcome.aspx.designer.cs">
+      <DependentUpon>userWelcome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="News.aspx.cs">
+      <DependentUpon>News.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="News.aspx.designer.cs">
+      <DependentUpon>News.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="photos.aspx.cs">
+      <DependentUpon>photos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="photos.aspx.designer.cs">
+      <DependentUpon>photos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="blognreview.aspx.cs">
+      <DependentUpon>blognreview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="blognreview.aspx.designer.cs">
+      <DependentUpon>blognreview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="register2.aspx.cs">
+      <DependentUpon>register2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="register2.aspx.designer.cs">
+      <DependentUpon>register2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vRegistry2.aspx.cs">
+      <DependentUpon>vRegistry2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vRegistry2.aspx.designer.cs">
+      <DependentUpon>vRegistry2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mobility_pg.aspx.cs">
+      <DependentUpon>mobility_pg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mobility_pg.aspx.designer.cs">
+      <DependentUpon>mobility_pg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="about_pg.aspx.cs">
+      <DependentUpon>about_pg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="about_pg.aspx.designer.cs">
+      <DependentUpon>about_pg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="employment_pg.aspx.cs">
+      <DependentUpon>employment_pg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="employment_pg.aspx.designer.cs">
+      <DependentUpon>employment_pg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="advertisement_pg.aspx.cs">
+      <DependentUpon>advertisement_pg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="advertisement_pg.aspx.designer.cs">
+      <DependentUpon>advertisement_pg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ticket_pg.aspx.cs">
+      <DependentUpon>ticket_pg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ticket_pg.aspx.designer.cs">
+      <DependentUpon>ticket_pg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="terms_pg.aspx.cs">
+      <DependentUpon>terms_pg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="terms_pg.aspx.designer.cs">
+      <DependentUpon>terms_pg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="privacy_pg.aspx.cs">
+      <DependentUpon>privacy_pg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="privacy_pg.aspx.designer.cs">
+      <DependentUpon>privacy_pg.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Accounts\" />
+    <Folder Include="Administration\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="avCollection\" />
+    <Folder Include="Models\" />
+    <Folder Include="scripts\.settings\" />
+    <Folder Include="UserItems\userUploads\hs14\" />
+    <Folder Include="UserItems\userUploads\hsam11\" />
+    <Folder Include="UserItems\userUploads\hsam33\" />
+    <Folder Include="UserItems\userUploads\hssamm2\" />
+    <Folder Include="UserItems\userUploads\Jacksplat17\" />
+    <Folder Include="UserItems\userUploads\Sam1222\" />
+    <Folder Include="UserItems\userUploads\Sams10320\" />
+    <Folder Include="UserItems\userUploads\Vhines26\" />
+    <Folder Include="Venues\eventImages\" />
+    <Folder Include="Venues\venueUploads\Covenent\" />
+    <Folder Include="Venues\venueUploads\Focus Lounge\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55171</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:55171/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:55171/</IISAppRootUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

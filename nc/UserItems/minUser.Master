@@ -1,0 +1,30 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="minUser.Master.cs" Inherits="nc.userItems.minUser" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="../style/ncStyle.css" type="text/css" rel="stylesheet" />
+    <script src="../scripts/siteScript.js" type="text/javascript"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <table class="prime_pop_tbl_cls">
+                <tr>
+                    <td class="prime_min_head_cls">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="prime_min_content_cls">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

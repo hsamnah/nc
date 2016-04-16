@@ -1,0 +1,17 @@
+﻿table.container_tbl{width:200px;}
+td.ab{ padding:2px 2px 2px 2px;background:#24323e;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:10pt;width:200px; color:#B4C6D3;}
+span.button_cls{ padding:2px 2px 2px 2px; color:#B4C6D3;background-color:transparent;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:10pt; cursor:pointer;
+}
+td.uEvent_Form_cls{ font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:10pt;color:#24323e;}
+div.CEC_cls{ position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: 10000; background-color:rgba(20,20,20,.85);display:none; }
+div.euManageB_cls{ position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: 10000; background-color:rgba(20,20,20,.85);display:none; }
+span.euManageB_cls{cursor:pointer;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:8pt;color:#24323e;}
+div.innerC_cls{width:600px; position:absolute;height:480px;background-color:#B4C6D3;}
+div.ICEC_cls{ position:absolute;background-color:#B4C6D3;color:#24323e; width:600px;height:690px; z-index:10001;padding:5px 5px 5px 5px;}
+div.ddown_cls{position:absolute;visibility:hidden;z-index:10004;-ms-user-select:none; -webkit-user-select:none; -moz-user-select:none;user-select:none;}
+div.ddown2_cls{position:absolute;visibility:hidden;z-index:10004;-ms-user-select:none; -webkit-user-select:none; -moz-user-select:none;user-select:none;}
+div.inviteList_cls{width:100%;height:100px;overflow-y:scroll;background-color:white;}
+div.inviteList2_cls{width:100%;height:75px;overflow-y:scroll;background-color:white;}
+div.intellisense_cls{position:absolute;visibility:hidden;background-color:white;}
+div.intellisense2_cls{position:absolute;visibility:hidden;background-color:white;}
+td.eList_cls{background-color:#B4C6D3;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:8pt;color:#24323e;}

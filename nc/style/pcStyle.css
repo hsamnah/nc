@@ -1,0 +1,25 @@
+﻿div.rootPanel_cls{}
+img.ctrlButtons_cls{height:15px;cursor:pointer}
+div.clrSelection_cls{display:inline-block;width:20px;height:15px;border:1px solid #24323e;cursor:pointer;user-select:none;-ms-user-select:none;-webkit-user-select:none;-moz-user-select:none;}
+#clrPicker{width:15px;cursor:pointer;user-select:none;-ms-user-select:none;-webkit-user-select:none;-moz-user-select:none;}
+#clrPicker2{width:15px;cursor:pointer;user-select:none;-ms-user-select:none;-webkit-user-select:none;-moz-user-select:none;}
+td.strColor_cls{user-select:none;-ms-user-select:none;-webkit-user-select:none;-moz-user-select:none;}
+td.btnContain_cls{width:200px;}
+tr.strColor_cls{user-select:none;-ms-user-select:none;-webkit-user-select:none;-moz-user-select:none;}
+table.strClrTbl_cls{user-select:none;-ms-user-select:none;-webkit-user-select:none;-moz-user-select:none;}
+div.clrContainer_cls{user-select:none;-ms-user-select:none;-webkit-user-select:none;-moz-user-select:none;}
+input.ctrlButtons_cls{height:15px;cursor:pointer;}
+input.ctrlButtons2_cls{height:20px;cursor:pointer;}
+img.ddImage_cls{width:25px;cursor:pointer;}
+input.psImgSend_cls{width:35px;}
+td.buttonContainer_cls{border:solid 2px rgba(36, 50, 62,0.3);text-align:left;padding:0;margin:0;}
+td.btnSend_cls{width:35px;height:40px;border:solid 2px rgba(36, 50, 62,0.3);background-color:#24323e;cursor:pointer;}
+
+div.imgList_cls{position:absolute;width:429px;background-color:white;height:100px;visibility:hidden;}
+input.imgDir_cls{width:40px;}
+div.DirList_cls{background-color:white;}
+div.imgPanel_cls{position:static;display:inline-block;text-align:center;vertical-align:top;}
+
+div.InfoBox_cls { border-collapse: collapse; border-spacing: 0; width: 97%; height: 100px; vertical-align: top; padding: 5px 5px 5px 5px; overflow-y: scroll; background-color: white; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 10pt; }
+div.iList_cls{ height:50px;width:429px; overflow-x:auto;overflow-y:auto;}
+input.ImgGet_cls{height: 40px; width: 21px;user-select:none;-moz-user-select:none;-webkit-user-select:none;cursor:pointer;}

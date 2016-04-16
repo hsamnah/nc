@@ -1,0 +1,165 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="root.master.cs" Inherits="nc.userSet.rootMaster" %>
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>Night Crawler</title>
+    <link href="../style/ncStyle.css" type="text/css" rel="stylesheet" />
+    <script src="../scripts/siteScript.js" type="text/javascript"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="The description of my page" />
+</head>
+<body>
+    <div id="container">
+        <input type="hidden" id="currentFriend" />
+        <input type="hidden" id="currFriend" />
+        <div id="title">
+            <span id="NameHolder"></span>
+            <input id="hiddenFN" type="hidden" />
+        </div>
+        <div id="messages">
+        </div>
+        <div id="comm">
+            <div id="emo"></div>
+            <div id="comm1">
+                <div contenteditable="true" id="message"></div>
+                <input id="sendM" type="button" value="Send" />
+            </div>
+        </div>
+    </div>
+
+    <form id="form1" runat="server">
+        <asp:HiddenField ID="loggedUser" runat="server" ClientIDMode="Static" />
+        <asp:HiddenField ID="currentUser" ClientIDMode="Static" runat="server" />
+        <div id="inviteBack" class="blockscreen2_cls">
+            <div>
+                <table style="width: 100%;">
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td style="width: 50px;">
+                            <img src="../imgs/closeInvert.gif" alt="close" id="cmdInviteBtn" class="cmdBtn_cls" style="width: 50px; cursor: pointer;" /></td>
+                    </tr>
+                </table>
+        </div>
+        <div id="innerInvite" class="innerInvite_cls">
+                <fieldset>
+                    <legend class="legendTxt_cls">Invite friends:</legend>
+                    Please seperate email addresses with a comma.
+                    <asp:TextBox ID="recievers" runat="server" TextMode="MultiLine" CssClass="userInvite_cls"></asp:TextBox><br />
+                    <asp:LinkButton runat="server" ID="Send" OnClick="Send_Click">Send Invites</asp:LinkButton>
+                </fieldset>
+            </div>
+        </div>
+        <input type="hidden" ID="lUFriends" runat="server" ClientIDMode="Static" />
+        <div>
+            <div id="mwindow" class="cl_lbtn_settings" style="width: 150px;">
+                Inbox
+                <br />
+                Outbox<br />
+                Sent Items<br />
+                Drafts<br />
+            </div>
+            <table class="Primary_tbl">
+                <tr>
+                    <td>&nbsp;</td>
+                    <td rowspan="4" class="friends_cls">
+                        <asp:HiddenField ID="myUname" ClientIDMode="Static" runat="server" />
+                        <asp:DataList DataKeyField="userID" ID="FriendList" runat="server" OnItemDataBound="get_chatHistory_dBound">
+                            <ItemTemplate>
+                                <!-- this is the hidden field that holds the chat messages //-->
+                                <input type="hidden" id='<%# Eval("fn") + "_" + Eval("ln") + "_" + Eval("userID") %>' />
+                                <input type="hidden" id="selectedFriend" class="selectedFriend_cls" runat="server" value='<%# Eval("uName") %>' />
+                                <input type="hidden" id='<%# "friendContainer_" + Eval("uName")%>' />
+
+                                <input type="hidden" runat="server" id="fc" class="chatCol" />
+                                
+                                <span class="friendList_cls" id='<%# Eval("userID") %>'><%# Eval("fn") %>&nbsp;<%# Eval("ln") %></span><br /><img class="isOnline_cls" id='<%#"isOnline_" + Eval("uName") %>' src="/imgs/false.png" style="width: 10px;" /><img class="isAvailable_cls" id='<%# "isAvailable_" + Eval("uName") %>' src="/imgs/false.png" style="width: 10px;" /><img class="msgWaiting_cls" id='<%# "msgWaiting_" + Eval("uName") %>' src="/imgs/false.png" style="width: 10px;" />
+                            </ItemTemplate>
+                        </asp:DataList></td>
+                    <td class="menu_Cell">
+                        <table class="menu_tbl_cls">
+                            <tr>
+                                <td class="menu_cell_cls">
+                                    <asp:Menu ID="Menu1" runat="server" CssClass="nc_menu" Orientation="Horizontal" DataSourceID="nc_menuds">
+                                        <DynamicMenuItemStyle CssClass="nc_menu_item" />
+                                        <DynamicMenuStyle CssClass="nc_menu_item" />
+                                        <StaticMenuItemStyle CssClass="nc_menu_item" />
+                                        <StaticMenuStyle CssClass="nc_menu_item" />
+                                    </asp:Menu>
+                                    <asp:SiteMapDataSource ID="nc_menuds" runat="server" ShowStartingNode="false" SiteMapProvider="userAccess" />
+                                </td>
+                                <td class="set_cell">
+                                    <span id="inviteBtn">Invite friends</span>&nbsp;&nbsp;
+                                    <asp:LinkButton ID="signout" runat="server" CssClass="user_interface_btn" OnClick="signout_Click" Text="Sign Out" ForeColor="White"></asp:LinkButton>&nbsp;&nbsp;
+                            <a href="UserSettings.aspx">
+                                <img alt="settings" class="settings_btn_cls" src="../imgs/settingsIcon.jpg" /></a></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="pri_center_cell">&nbsp;</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="contentCell" id="contentContainer">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td class="pBoundry_cls">
+                        <div>
+                            <span class="footLinks_cls" id="mobility" itemid="/mobility_pg">Mobility</span>&nbsp;|&nbsp;
+                        <span class="footLinks_cls" id="about" itemid="/about_pg">About The Underground</span>&nbsp;|&nbsp;
+                        <span class="footLinks_cls" id="employment" itemid="/employment_pg">Employment opportunities</span>&nbsp;|&nbsp;
+                        <span class="footLinks_cls" id="advertisement" itemid="/advertisement_pg">Advertising</span>&nbsp;|&nbsp;
+                        <span class="footLinks_cls" id="tickets" itemid="/ticket_pg">Ticket sales</span>&nbsp;|&nbsp;
+                        <span class="footLinks_cls" id="terms" itemid="/terms_pg">Terms of use</span>&nbsp;|&nbsp;
+                        <span class="footLinks_cls" id="privacy" itemid="/privacy_pg">Privacy</span>
+                        </div>
+                        <p>© The Underground 2015</p>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
+        </div>
+        <script src="../scripts/jquery-2.1.4.js" type="text/javascript"></script>
+        <script src="../scripts/jquery.signalR-2.2.0.js" type="text/javascript"></script>
+        <script src="/signalr/hubs" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(function () {
+                var chat = $.connection.underChat;
+                // incoming messages
+                chat.client.send = function (name, msg) {
+                    $('#messages').append('<span class="msgName">' + name + '</span><br /><span class="chatMessage">' + msg + '</span><br />');
+                    $('#friendContainer_' + name).val('<span class="msgName">' + name + '</span><br /><span class="chatMessage">' + msg + '</span><br />');
+                    $('#msgWaiting_' + name).attr('src', '/imgs/true.png');
+                };
+                chat.client.connected = function (status, sender) {
+                    $('#isOnline_' + sender).attr('src', '/imgs/' + status + '.png');
+                };
+                chat.client.friendConnected = function (status, friend) {
+                    $('#isOnline_' + friend).attr('src', '/imgs/' + status + '.png');
+                };
+                chat.client.disconnected = function (status, friend) {
+                    $('#isOnline_' + friend).attr('src', '/imgs/' + status);
+                };
+                // outgoing messages
+                $.connection.hub.start().done(function () {
+                    $('#sendM').click(function () {
+                        chat.server.send($('#currFriend').val(), $('#message').html());
+                        $('#messages').append('<span class="msgName">' + $('#myUname').val() + '</span><br /><span class="chatMessage">' + $('#message').html() + '</span><br />');
+                        $('#message').text('').focus();
+                    });
+                });
+            });
+        </script>
+    </form>
+</body>
+</html>
